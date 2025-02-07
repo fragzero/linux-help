@@ -18,6 +18,6 @@ To generate your Gemini API Key => https://ai.google.dev/gemini-api/docs/api-key
 ## Build
 
 ```sh
-go build -o linux-help
+go build -ldflags "-w" -o linux-help
 cp linux-help ~/.local/bin/
 ```
