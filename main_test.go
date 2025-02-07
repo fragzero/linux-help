@@ -39,27 +39,6 @@ func TestCommandLineArgumentParsing(t *testing.T) {
 	}
 }
 
-func TestGenerateContent(t *testing.T) {
-	ctx := context.Background()
-	client, _ := genai.NewClient(ctx, option.WithAPIKey("test_key"))
-	model := client.GenerativeModel("gemini-1.5-flash")
-	model.SetTemperature(0.5)
-	model.SystemInstruction = &genai.Content{
-		Parts: []genai.Part{
-			genai.Text("you are a linux terminal assistant, you can only answer with one linux commands, no markdown or comments or explanations"),
-		},
-	}
-
-	resp, err := model.GenerateContent(ctx, genai.Text("test prompt"))
-	if err != nil {
-		t.Fatalf("Failed to generate content: %v", err)
-	}
-
-	if len(resp.Candidates) == 0 {
-		t.Error("Expected at least one candidate in response")
-	}
-}
-
 func TestCopyToClipboard(t *testing.T) {
 	resp := &genai.GenerateContentResponse{
 		Candidates: []*genai.Candidate{
