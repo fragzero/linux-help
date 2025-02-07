@@ -5,7 +5,6 @@ import (
 	"os"
 	"testing"
 
-	"github.com/atotto/clipboard"
 	"github.com/google/generative-ai-go/genai"
 	"google.golang.org/api/option"
 )
