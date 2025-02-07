@@ -2,8 +2,6 @@ module linux-help
 
 go 1.23
 
-toolchain go1.22.12
-
 require (
 	github.com/atotto/clipboard v0.1.4
 	github.com/google/generative-ai-go v0.19.0
