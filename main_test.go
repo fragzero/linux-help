@@ -62,7 +62,7 @@ func TestGenerateContent(t *testing.T) {
 
 func TestCopyToClipboard(t *testing.T) {
 	resp := &genai.GenerateContentResponse{
-		Candidates: []genai.Candidate{
+		Candidates: []*genai.Candidate{
 			{
 				Content: &genai.Content{
 					Parts: []genai.Part{
@@ -90,7 +90,7 @@ func TestCopyToClipboard(t *testing.T) {
 
 func TestPrintResponse(t *testing.T) {
 	resp := &genai.GenerateContentResponse{
-		Candidates: []genai.Candidate{
+		Candidates: []*genai.Candidate{
 			{
 				Content: &genai.Content{
 					Parts: []genai.Part{
