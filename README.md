@@ -11,6 +11,7 @@ A command-line interface (CLI) tool designed to assist Linux users in recalling 
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+- [Testing](#testing)
 
 # Installation
 
@@ -68,3 +69,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Author: FragZero
 - Email: fragzero@fragzero.com.br
+
+# Testing
+
+To run the tests for this project, use the following command:
+
+```sh
+go test -v ./...
+```
+
+This will execute all the test functions defined in the `main_test.go` file and provide detailed output for each test case.
