@@ -13,3 +13,11 @@ ps aux --sort=-%mem,-%cpu | head -n 11 | tail -n 10
 ## Gemini key
 
 To generate your Gemini API Key => https://ai.google.dev/gemini-api/docs/api-key
+
+
+## Build
+
+```sh
+go build -o linux-help
+cp linux-help ~/.local/bin/
+```
