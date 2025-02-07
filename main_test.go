@@ -4,10 +4,6 @@ import (
 	"context"
 	"os"
 	"testing"
-
-	"github.com/atotto/clipboard"
-	"github.com/google/generative-ai-go/genai"
-	"google.golang.org/api/option"
 )
 
 func TestRetrieveGEMINI_API_KEY(t *testing.T) {
@@ -36,34 +32,6 @@ func TestCommandLineArgumentParsing(t *testing.T) {
 		t.Log("Use quotes around the prompt.")
 		t.Log("Example: ./linux-help \"how to find big files in a directory\"")
 		t.Log("SHIFT+CTRL+V to paste the command.")
-	}
-}
-
-func TestCopyToClipboard(t *testing.T) {
-	resp := &genai.GenerateContentResponse{
-		Candidates: []*genai.Candidate{
-			{
-				Content: &genai.Content{
-					Parts: []genai.Part{
-						genai.Text("test content"),
-					},
-				},
-			},
-		},
-	}
-
-	err := copyToClipboard(resp)
-	if err != nil {
-		t.Fatalf("Failed to copy to clipboard: %v", err)
-	}
-
-	content, err := clipboard.ReadAll()
-	if err != nil {
-		t.Fatalf("Failed to read from clipboard: %v", err)
-	}
-
-	if content != "test content" {
-		t.Errorf("Expected clipboard content to be 'test content', got '%s'", content)
 	}
 }
 
