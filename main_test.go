@@ -4,6 +4,10 @@ import (
 	"context"
 	"os"
 	"testing"
+
+	"github.com/atotto/clipboard"
+	"github.com/google/generative-ai-go/genai"
+	"google.golang.org/api/option"
 )
 
 func TestRetrieveGEMINI_API_KEY(t *testing.T) {
