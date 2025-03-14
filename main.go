@@ -12,6 +12,8 @@ import (
 )
 
 func main() {
+	modelName := "gemini-2.0-flash"
+	temperature := 0.5
 	geminiApiKey := os.Getenv("GEMINI_API_KEY")
 	if geminiApiKey == "" {
 		log.Fatal("Please set GEMINI_API_KEY environment variable")
@@ -32,9 +34,8 @@ func main() {
 	}
 	prompt := os.Args[1]
 
-	// models: gemini-1.5-flash, gemini-1.5-flash-8b, gemini-1.0-pro
-	model := client.GenerativeModel("gemini-1.5-flash")
-	model.SetTemperature(0.5)
+	model := client.GenerativeModel(modelName)
+	model.SetTemperature(float32(temperature))
 	model.SystemInstruction = &genai.Content{
 		Parts: []genai.Part{
 			genai.Text("you are a linux terminal assistant, you can only answer with one linux commands, no markdown or comments or explanations"),
